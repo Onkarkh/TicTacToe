@@ -35,10 +35,11 @@ public class MainActivity extends AppCompatActivity {
             gameState[tapper] = currentPlayer;
             counter.setTranslationY(-1500);
             if (currentPlayer == 0) {
-                counter.setImageResource(R.drawable.ic_cross_black_110dp);
+                counter.setPadding(3,3,3,3);
+                counter.setImageResource(R.drawable.ic_cross_blue_128dp);
                 currentPlayer = 1;
             } else {
-                counter.setImageResource(R.drawable.ic_circle_black_110dp);
+                counter.setImageResource(R.drawable.ic_circle_red_128dp);
                 currentPlayer = 0;
             }
             counter.animate().translationYBy(1500).rotation(3600).setDuration(300);
@@ -63,11 +64,12 @@ public class MainActivity extends AppCompatActivity {
 
                 if (gameState[i] == 19) {
                     checker++;
+                    Log.d(TAG, "getCounter: "+checker);
                 }
             }
-            if (checker == 36) {
+            if (checker == 37) {
                 status = "Game Tie!";
-                openDialog(status);
+               openDialog(status);
             }
         }
     }
