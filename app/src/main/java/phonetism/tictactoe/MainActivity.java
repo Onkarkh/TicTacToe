@@ -2,6 +2,7 @@ package phonetism.tictactoe;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.ImageView;
@@ -11,12 +12,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "Tic-Tac-Teo";
     private int currentPlayer = 0;
     private int[] gameState = {19, 19, 19, 19, 19, 19, 19, 19, 19};
     private int[][] winPosition = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, {0, 4, 8}, {2, 4, 6}};
     private Boolean Active = true;
     private GridLayout gridLayout;
-    private String win;
+    private String status;
+    private int checker = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,18 +48,29 @@ public class MainActivity extends AppCompatActivity {
                         gameState[wp[0]] != 19) {
 
                     Active = false;
+
                     if (currentPlayer == 1) {
-                        win = "Cross is the Winner!";
-                        openDialog(win);
+                        status = "Cross is the Winner!";
+                        openDialog(status);
                     } else {
-                        win = "Circle is the Winner!";
-                        openDialog(win);
+                        status = "Circle is the Winner!";
+                        openDialog(status);
                     }
                 }
             }
+            
+            for (int i = 0; i < gameState.length; i++) {
+
+                if (gameState[i] == 19) {
+                    checker++;
+                }
+            }
+            if (checker == 36) {
+                status = "Game Tie!";
+                openDialog(status);
+            }
         }
     }
-
 
     private void openDialog(String win) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -89,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initGame() {
         currentPlayer = 0;
+        checker = 0;
         Active = true;
         for (int i = 0; i < gameState.length; i++) {
             gameState[i] = 19;
