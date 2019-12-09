@@ -41,7 +41,7 @@
             android:layout_margin="12dp"
             android:layout_marginLeft="10dp"
             android:onClick="getCounter"
-            android:tag="3" />
+            android:tag="2" />
 
         <ImageView
             android:id="@+id/position4"
@@ -49,7 +49,7 @@
             android:layout_height="110dp"
             android:layout_margin="12dp"
             android:onClick="getCounter"
-            android:tag="4" />
+            android:tag="3" />
 
         <ImageView
             android:id="@+id/position5"
@@ -58,7 +58,7 @@
             android:layout_margin="12dp"
             android:layout_marginLeft="15dp"
             android:onClick="getCounter"
-            android:tag="5" />
+            android:tag="4" />
 
         <ImageView
             android:id="@+id/position6"
@@ -67,7 +67,7 @@
             android:layout_margin="12dp"
             android:layout_marginLeft="10dp"
             android:onClick="getCounter"
-            android:tag="6" />
+            android:tag="5" />
 
         <ImageView
             android:id="@+id/position7"
@@ -75,7 +75,7 @@
             android:layout_height="110dp"
             android:layout_margin="12dp"
             android:onClick="getCounter"
-            android:tag="7" />
+            android:tag="6" />
 
         <ImageView
             android:id="@+id/position8"
@@ -84,7 +84,7 @@
             android:layout_margin="12dp"
             android:layout_marginLeft="15dp"
             android:onClick="getCounter"
-            android:tag="8" />
+            android:tag="7" />
 
         <ImageView
             android:id="@+id/position9"
@@ -93,7 +93,7 @@
             android:layout_margin="12dp"
             android:layout_marginLeft="10dp"
             android:onClick="getCounter"
-            android:tag="9" />
+            android:tag="8" />
     </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
