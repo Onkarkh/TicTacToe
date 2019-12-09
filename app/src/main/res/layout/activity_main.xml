@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <GridLayout
+        android:id="@+id/gridlayout"
         android:layout_width="400dp"
         android:layout_height="400dp"
         android:background="@drawable/gameboard"
