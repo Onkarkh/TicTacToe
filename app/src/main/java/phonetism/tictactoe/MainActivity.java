@@ -67,10 +67,11 @@ public class MainActivity extends AppCompatActivity {
                     Log.d(TAG, "getCounter: "+checker);
                 }
             }
-            if (checker == 37) {
+            if (checker == 0) {
                 status = "Game Tie!";
                openDialog(status);
             }
+            checker = 0;
         }
     }
 
