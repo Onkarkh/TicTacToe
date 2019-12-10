@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private GridLayout gridLayout;
     private String status;
     private int checker = 0;
+    private int moves = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +39,11 @@ public class MainActivity extends AppCompatActivity {
                 counter.setPadding(3,3,3,3);
                 counter.setImageResource(R.drawable.ic_cross_blue_128dp);
                 currentPlayer = 1;
+                moves++;
             } else {
-                counter.setImageResource(R.drawable.ic_circle_red_128dp);
+                counter.setImageResource(R.drawable.ic_circle_outline);
                 currentPlayer = 0;
+                moves++;
             }
             counter.animate().translationYBy(1500).rotation(3600).setDuration(300);
 
@@ -57,26 +60,18 @@ public class MainActivity extends AppCompatActivity {
                         status = "Circle is the Winner!";
                         openDialog(status);
                     }
+                }  else {
+                    if(moves == 9){
+                        moves = 0;
+                        openDialog("Game Tie!");
+                    }
                 }
             }
-            
-            for (int i = 0; i < gameState.length; i++) {
-
-                if (gameState[i] == 19) {
-                    checker++;
-                    Log.d(TAG, "getCounter: "+checker);
-                }
-            }
-            if (checker == 0) {
-                status = "Game Tie!";
-               openDialog(status);
-            }
-            checker = 0;
         }
     }
 
     private void openDialog(String win) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(win);
         builder.setCancelable(true);
 
@@ -95,8 +90,8 @@ public class MainActivity extends AppCompatActivity {
                         for (int i = 0; i < gridLayout.getChildCount(); i++) {
                             ImageView counter = (ImageView) gridLayout.getChildAt(i);
                             counter.setImageDrawable(null);
-                            initGame();
                         }
+                        initGame();
                     }
                 });
 
@@ -107,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
     private void initGame() {
         currentPlayer = 0;
         checker = 0;
+        moves = 0;
         Active = true;
         for (int i = 0; i < gameState.length; i++) {
             gameState[i] = 19;
