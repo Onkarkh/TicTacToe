@@ -42,7 +42,7 @@
             android:layout_width="110dp"
             android:layout_height="110dp"
             android:layout_margin="12dp"
-            android:padding="10dp"
+            android:padding="15dp"
             android:layout_marginLeft="10dp"
             android:onClick="getCounter"
             android:tag="2" />
@@ -52,7 +52,7 @@
             android:layout_width="110dp"
             android:layout_height="110dp"
             android:layout_margin="12dp"
-            android:padding="10dp"
+            android:padding="15dp"
             android:onClick="getCounter"
             android:tag="3" />
 
