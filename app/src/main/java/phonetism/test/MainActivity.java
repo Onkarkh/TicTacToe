@@ -1,4 +1,4 @@
-package phonetism.tictactoe;
+package phonetism.test;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
