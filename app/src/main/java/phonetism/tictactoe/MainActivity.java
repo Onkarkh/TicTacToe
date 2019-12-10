@@ -2,7 +2,6 @@ package phonetism.tictactoe;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.ImageView;
@@ -50,9 +49,7 @@ public class MainActivity extends AppCompatActivity {
             for (int[] wp : winPosition) {
                 if (gameState[wp[0]] == gameState[wp[1]] && gameState[wp[1]] == gameState[wp[2]] &&
                         gameState[wp[0]] != 19) {
-
                     Active = false;
-
                     if (currentPlayer == 1) {
                         status = "Cross is the Winner!";
                         openDialog(status);
